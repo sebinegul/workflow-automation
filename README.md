@@ -1,5 +1,3 @@
-I understand that you want the README.md file to have proper alignment and formatting when viewed on GitHub. Markdown files on GitHub support a variety of formatting options to ensure that the content is well-organized and easy to read. Here’s a revised version of the README.md file with improved alignment and formatting:
-markdownCopy
 # Workflow Automation Builder
 
 This is a React-based workflow automation builder that allows users to create, visualize, and manage workflows. The application features an interactive canvas for dragging and dropping nodes, configuring node properties, and visualizing workflows in real-time. It also includes advanced features like undo/redo functionality, workflow export/import, and a responsive design.
