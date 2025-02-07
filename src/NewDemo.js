@@ -9,7 +9,7 @@ import "reactflow/dist/style.css";
 import "tailwindcss/tailwind.css";
 import { MiniMap, Controls, Background } from "reactflow";
 import useUndoable from "use-undoable";
-import { addNode, deleteNode, deleteEdge } from "./utils/nodeService";
+
 import DeleteButtons from "./components/DeleteButtons";
 import NodeConfigurationPanel from "./components/NodeConfigurationPanel";
 import NodeButtons from "./components/NodeButtons";
@@ -18,6 +18,9 @@ import ConditionNode from "./components/nodes/ConditionNode";
 import NotificationNode from "./components/nodes/NotificationNode";
 import Toolbar from "./components/Toolbar";
 import SummaryTable from "./components/SummaryTable";
+import { useAddNode } from "./hooks/useAddNode";
+import { useDeleteNode } from "./hooks/useDeleteNode";
+import { useDeleteEdge } from "./hooks/useDeleteEdge";
 
 const initialEdges = [
   { id: "e1-2", source: "1", target: "2", animated: true },
@@ -49,10 +52,19 @@ const NewDemo = () => {
     useUndoable(initialNodes);
   const [edges, setEdges, { undo: undoEdges, redo: redoEdges }] =
     useUndoable(initialEdges);
-  const [nodeIdCounter, setNodeIdCounter] = useState(4);
-  const [taskCounter, setTaskCounter] = useState(2);
-  const [conditionCounter, setConditionCounter] = useState(2);
-  const [notificationCounter, setNotificationCounter] = useState(2);
+  const {
+    addNode,
+    nodeIdCounter,
+    setNodeIdCounter,
+    taskCounter,
+    setTaskCounter,
+    conditionCounter,
+    setConditionCounter,
+    notificationCounter,
+    setNotificationCounter,
+  } = useAddNode();
+  const { deleteNode } = useDeleteNode();
+  const { deleteEdge } = useDeleteEdge();
   const [selectedNode, setSelectedNode] = useState(null);
   const [isSummaryTableOpen, setIsSummaryTableOpen] = useState(false);
 
