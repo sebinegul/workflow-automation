@@ -27,7 +27,7 @@ const NodeSummaryTable = ({ nodes, setNodes }) => {
               type="text"
               value={editingNodeData[row.original.id]?.label || row.original.data.label || ''}
               onChange={handleLabelChange}
-              className="border border-gray-300 rounded p-2 w-full"
+              className="border border-gray-300 rounded p-2 w-full sm:w-48"
             />
           ) : (
             <span className="text-gray-700">{row.original.data.label}</span>
@@ -60,7 +60,7 @@ const NodeSummaryTable = ({ nodes, setNodes }) => {
               type="text"
               value={editingNodeData[row.original.id]?.assignee || row.original.data.assignee || ''}
               onChange={handleAssigneeChange}
-              className="border border-gray-300 rounded p-2 w-full"
+              className="border border-gray-300 rounded p-2 w-full sm:w-48"
             />
           ) : (
             <span className="text-gray-700">{row.original.data.assignee}</span>
@@ -86,7 +86,7 @@ const NodeSummaryTable = ({ nodes, setNodes }) => {
               type="date"
               value={editingNodeData[row.original.id]?.dueDate || row.original.data.dueDate || ''}
               onChange={handleDueDateChange}
-              className="border border-gray-300 rounded p-2 w-full"
+              className="border border-gray-300 rounded p-2 w-full sm:w-48"
             />
           ) : (
             <span className="text-gray-700">{row.original.data.dueDate}</span>
