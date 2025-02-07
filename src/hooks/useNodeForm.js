@@ -4,7 +4,7 @@ const useNodeForm = (initialValues, onSubmit) => {
   const [formData, setFormData] = useState(initialValues);
 
   useEffect(() => {
-    setFormData(initialValues);
+    setFormData(initialValues); // eslint-disable-next-line
   }, []);
 
   const handleInputChange = useCallback((e) => {
