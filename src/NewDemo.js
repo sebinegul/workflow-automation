@@ -1,3 +1,4 @@
+// src/components/NewDemo.js
 import React, { useCallback, useMemo, useState } from "react";
 import ReactFlow, {
   applyEdgeChanges,
@@ -7,7 +8,7 @@ import ReactFlow, {
 import "reactflow/dist/style.css";
 import "tailwindcss/tailwind.css";
 import { MiniMap, Controls, Background } from "reactflow";
-
+import useUndoable from "use-undoable";
 import { addNode, deleteNode, deleteEdge } from "./utils/nodeService";
 import DeleteButtons from "./components/DeleteButtons";
 import NodeConfigurationPanel from "./components/NodeConfigurationPanel";
@@ -15,9 +16,8 @@ import NodeButtons from "./components/NodeButtons";
 import TaskNode from "./components/nodes/TaskNode";
 import ConditionNode from "./components/nodes/ConditionNode";
 import NotificationNode from "./components/nodes/NotificationNode";
-import NodeSummaryTable from "./components/NodeSummaryTable";
-import useUndoable from "use-undoable";
-import { RiCloseCircleLine, RiEyeLine } from "react-icons/ri";
+import Toolbar from "./components/Toolbar";
+import SummaryTable from "./components/SummaryTable";
 
 const initialEdges = [
   { id: "e1-2", source: "1", target: "2", animated: true },
@@ -84,10 +84,6 @@ const NewDemo = () => {
     []
   );
 
-  const toggleSummaryTable = () => {
-    setIsSummaryTableOpen((prev) => !prev);
-  };
-
   return (
     <div className="w-full h-screen relative">
       <ReactFlow
@@ -125,13 +121,11 @@ const NewDemo = () => {
             )
           }
         />
-
         <NodeConfigurationPanel
           selectedNode={selectedNode}
           setSelectedNode={setSelectedNode}
           setNodes={setNodes}
         />
-
         <div className="flex items-center justify-center gap-4">
           <DeleteButtons
             nodes={nodes}
@@ -139,46 +133,21 @@ const NewDemo = () => {
             deleteNode={(nodeId) => deleteNode(nodeId, setNodes, setEdges)}
             deleteEdge={(edgeId) => deleteEdge(edgeId, setEdges)}
           />
-          <button
-            onClick={toggleSummaryTable}
-            className="bg-[#2a764c] text-[#c7f7cd] px-4 py-2 rounded hover:bg-[#1d5235]  flex items-center justify-center gap-2"
-          >
-            <RiEyeLine />
-            View Table
-          </button>
-
-          <button
-            onClick={handleUndo}
-            className="bg-[#942d81] text-[#ddd1de] px-4 py-2 rounded hover:bg-[#6e2160]"
-          >
-            Undo
-          </button>
-          <button
-            onClick={handleRedo}
-            className="bg-[#ddd1de] text-[#942d81] px-4 py-2 rounded hover:bg-[#ede0ee]"
-          >
-            Redo
-          </button>
-          <button
-            onClick={handleClearAll}
-            className="bg-[#f12027] text-[#d9e3e2] px-4 py-2 rounded hover:bg-red-600"
-          >
-            Clear All
-          </button>
+          <Toolbar
+            handleUndo={handleUndo}
+            handleRedo={handleRedo}
+            handleClearAll={handleClearAll}
+            toggleSummaryTable={() => setIsSummaryTableOpen((prev) => !prev)}
+            isSummaryTableOpen={isSummaryTableOpen}
+          />
         </div>
-
-        {isSummaryTableOpen && (
-          <div className="absolute top-20 right-20 bg-white shadow-lg p-4 z-20 rounded-lg md:w-1/2">
-            <button
-              onClick={toggleSummaryTable}
-              className="absolute top-2 right-2 p-2 bg-red-500 text-[#c7f7cd] rounded-full hover:bg-red-600"
-            >
-              <RiCloseCircleLine />
-            </button>
-            <NodeSummaryTable nodes={nodes} setNodes={setNodes} />
-          </div>
-        )}
       </div>
+      <SummaryTable
+        nodes={nodes}
+        setNodes={setNodes}
+        isSummaryTableOpen={isSummaryTableOpen}
+        setIsSummaryTableOpen={setIsSummaryTableOpen}
+      />
     </div>
   );
 };
