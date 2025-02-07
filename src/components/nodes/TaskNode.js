@@ -12,7 +12,8 @@ const TaskNode = ({ data }) => {
       />
 
       {/* Node Content */}
-      <div className="flex flex-col w-full h-full bg-[#a5e19d] rounded-lg p-2 md:p-4">
+
+      <div className="flex flex-col w-full h-full bg-[#a5e19d] rounded-lg p-2 md:p-4 min-h-24">
         <div className="font-semibold text-[#1d9e57]">
           {data.taskName ? data.taskName : data.label}
         </div>
