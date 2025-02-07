@@ -1,4 +1,3 @@
-// src/components/DeleteButtons.js
 import React, { useState } from "react";
 import { RiDeleteBin4Line } from "react-icons/ri";
 
@@ -39,7 +38,7 @@ const DeleteButtons = ({ nodes, edges, deleteNode, deleteEdge }) => {
   const [isEdgeDropdownOpen, setIsEdgeDropdownOpen] = useState(false);
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-4">
       <DeleteDropdown
         items={nodes}
         deleteItem={deleteNode}

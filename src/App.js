@@ -1,5 +1,4 @@
-// src/App.js
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState, useEffect } from "react";
 import ReactFlow, {
   applyEdgeChanges,
   applyNodeChanges,
@@ -26,6 +25,7 @@ const initialEdges = [
   { id: "e1-2", source: "1", target: "2" },
   { id: "e2-3", source: "2", target: "3" },
 ];
+
 const initialNodes = [
   {
     id: "1",
@@ -95,6 +95,30 @@ const App = () => {
     }),
     []
   );
+
+  // Adjust node positions based on screen size
+  useEffect(() => {
+    const adjustNodePositions = () => {
+      const isMobile = window.innerWidth < 768; // Adjust the breakpoint as needed
+      const newNodes = nodes.map((node) => {
+        if (isMobile) {
+          return {
+            ...node,
+            position: { x: 130, y: node.position.y },
+          };
+        }
+        return node;
+      });
+      setNodes(newNodes);
+    };
+
+    adjustNodePositions();
+    window.addEventListener("resize", adjustNodePositions);
+
+    return () => {
+      window.removeEventListener("resize", adjustNodePositions);
+    };
+  }, [nodes, setNodes]);
 
   return (
     <div className="w-full h-screen relative">
