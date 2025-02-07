@@ -1,7 +1,8 @@
+import React from "react";
 import useNodeForm from "../hooks/useNodeForm";
+import TaskForm from "./forms/TaskForm";
 import ConditionForm from "./forms/ConditionForm";
 import NotificationForm from "./forms/NotificationForm";
-import TaskForm from "./forms/TaskForm";
 
 const NodeConfigurationPanel = ({
   selectedNode,
