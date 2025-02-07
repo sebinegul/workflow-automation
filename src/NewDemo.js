@@ -22,26 +22,26 @@ import { useDeleteNode } from "./hooks/useDeleteNode";
 import { useDeleteEdge } from "./hooks/useDeleteEdge";
 
 const initialEdges = [
-  { id: "e1-2", source: "1", target: "2", animated: true },
-  { id: "e2-3", source: "2", target: "3", animated: true },
+  { id: "e1-2", source: "1", target: "2" },
+  { id: "e2-3", source: "2", target: "3" },
 ];
 const initialNodes = [
   {
     id: "1",
     type: "task",
-    position: { x: 650, y: 200 },
+    position: { x: 350, y: 200 },
     data: { label: "Task 1" },
   },
   {
     id: "2",
     type: "condition",
-    position: { x: 650, y: 350 },
+    position: { x: 350, y: 350 },
     data: { label: "Condition 1" },
   },
   {
     id: "3",
     type: "notification",
-    position: { x: 650, y: 500 },
+    position: { x: 350, y: 500 },
     data: { label: "Notification 1" },
   },
 ];

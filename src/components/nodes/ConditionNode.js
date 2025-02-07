@@ -1,7 +1,6 @@
 import { Handle } from "reactflow";
 
 const ConditionNode = ({ data }) => {
-  console.log("data", data);
   return (
     <div className="relative w-40 md:w-56 flex flex-col items-center">
       <Handle
