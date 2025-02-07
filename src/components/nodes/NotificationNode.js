@@ -1,6 +1,7 @@
 import { Handle } from "reactflow";
 
 const NotificationNode = ({ data }) => {
+  console.log("data", data);
   return (
     <div className="relative w-40 md:w-56 flex flex-col items-center">
       <Handle
@@ -12,7 +13,9 @@ const NotificationNode = ({ data }) => {
 
       {/* Node Content */}
       <div className="flex flex-col w-full h-full bg-[#f2e6d0] rounded-lg p-2 md:p-4 min-h-24">
-        <div className="font-semibold text-[#f9650f]  p-2">{data.label}</div>
+        <div className="font-semibold text-[#f9650f]  p-2">
+          {data?.notificationName ? data?.notificationName : data.label}
+        </div>
         <div className=" p-2">
           {data.notificationMessage && (
             <div className="mt-2 text-sm text-[#f9650f] ">

@@ -12,7 +12,9 @@ const ConditionNode = ({ data }) => {
 
       {/* Node Content */}
       <div className="flex flex-col w-full h-full bg-[#efd9ea] rounded-lg p-2 md:p-4 min-h-24">
-        <div className="font-semibold text-[#e022b0]  p-2">{data.label}</div>
+        <div className="font-semibold text-[#e022b0]  p-2">
+          {data?.conditionName ? data?.conditionName : data.label}
+        </div>
         <div className=" p-2">
           {data.conditionValue && (
             <div className="mt-2 text-sm text-[#e022b0] ">

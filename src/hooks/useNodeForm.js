@@ -4,7 +4,7 @@ const useNodeForm = (initialValues, onSubmit) => {
   const [formData, setFormData] = useState(initialValues);
 
   useEffect(() => {
-    setFormData(initialValues); // eslint-disable-next-line
+    setFormData(initialValues); // Ensure form data is reset when initialValues change
   }, []);
 
   const handleInputChange = useCallback((e) => {
@@ -14,8 +14,6 @@ const useNodeForm = (initialValues, onSubmit) => {
 
   const handleSubmit = useCallback(() => {
     onSubmit(formData);
-
-    // setFormData(initialValues);
   }, [formData, onSubmit]);
 
   return { formData, handleInputChange, handleSubmit };
