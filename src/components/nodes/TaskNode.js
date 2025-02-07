@@ -1,6 +1,7 @@
 import { Handle } from "reactflow";
 
 const TaskNode = ({ data }) => {
+  console.log("data", data);
   return (
     <div className="relative w-40 md:w-56 flex flex-col items-center">
       <Handle
@@ -12,7 +13,9 @@ const TaskNode = ({ data }) => {
 
       {/* Node Content */}
       <div className="flex flex-col w-full h-full bg-[#a5e19d] rounded-lg p-2 md:p-4">
-        <div className="font-semibold text-[#1d9e57]">{data.label}</div>
+        <div className="font-semibold text-[#1d9e57]">
+          {data.taskName ? data.taskName : data.label}
+        </div>
         <div>
           {data.assignee && (
             <div className="mt-2 text-sm text-[#1d9e57]">

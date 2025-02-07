@@ -9,15 +9,7 @@ const NodeConfigurationPanel = ({
   setSelectedNode,
   setNodes,
 }) => {
-  const initialValues = {
-    taskName: selectedNode?.data?.taskName || "",
-    assignee: selectedNode?.data?.assignee || "",
-    dueDate: selectedNode?.data?.dueDate || "",
-    conditionName: selectedNode?.data?.conditionName || "",
-    conditionValue: selectedNode?.data?.conditionValue || "",
-    notificationName: selectedNode?.data?.notificationName || "",
-    notificationMessage: selectedNode?.data?.notificationMessage || "",
-  };
+  console.log("selectedNode", selectedNode);
 
   const handleSubmit = (formData) => {
     if (selectedNode) {
@@ -42,7 +34,7 @@ const NodeConfigurationPanel = ({
     formData,
     handleInputChange,
     handleSubmit: handleFormSubmit,
-  } = useNodeForm(initialValues, handleSubmit);
+  } = useNodeForm(selectedNode?.data || {}, handleSubmit);
 
   return (
     selectedNode && (
