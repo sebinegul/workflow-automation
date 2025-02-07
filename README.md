@@ -173,7 +173,7 @@ This will start the development server and open the application in your default 
 This application provides a comprehensive solution for workflow automation, combining powerful libraries and best practices in React development. It offers a user-friendly interface, robust functionality, and opportunities for further enhancement.
 
 ## Contact
-For any questions or issues, please contact `your-email@example.com`.
+For any questions or issues, please contact `sebi.94george@gmail.com`.
 
 
 
