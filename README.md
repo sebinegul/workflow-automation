@@ -1,70 +1,110 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+README
+Introduction
+This is a React application for a workflow automation builder, allowing users to create, visualize, and manage workflows. The application is built using React Flow for the interactive canvas, React Hook Form for node configuration forms, and React Table for displaying workflow data. It also includes features like undo/redo functionality, export/import of workflows, and a responsive design.
+Getting Started
+To run the project locally, follow these steps:
+Clone the Repository
+bash
+Copy
+git clone <repository-url>
+Install Dependencies
+bash
+Copy
+cd <project-directory>
+npm install
+Run the Application
+bash
+Copy
+npm run start
+This will start the development server and open the application in your default web browser.
+Features
+Core Features
+Workflow Canvas
+Users can drag-and-drop nodes and connect them with edges.
+Supports three types of nodes: "Task", "Condition", and "Notification".
+Nodes and edges can be deleted.
+Node Configuration
+Clicking on a node opens a side panel with a form to configure its properties.
+Forms are built using React Hook Form.
+Each node type has a unique form with relevant fields.
+Workflow Data Table
+Displays a table summarizing all nodes in the workflow.
+Columns include "Node Type", "Node Name", "Status", and "Actions".
+Users can edit node properties directly from the table.
+Advanced Features
+Validation
+Node configuration forms include validation for required fields and date validation.
+Undo/Redo
+Users can undo and redo actions such as adding, deleting, or moving nodes.
+Export/Import
+Workflows can be exported as JSON files and imported back into the application.
+Abstraction and Reusability
+Reusable Components
+Workflow canvas, node configuration forms, and data table are created as reusable components.
+Custom hooks are used to abstract logic for form handling, workflow state management, and undo/redo functionality.
+Design and User Experience
+Styling
+Styled using Tailwind CSS for a clean and intuitive UI.
+The application is responsive and works well on different screen sizes.
+Animations
+Smooth drag-and-drop and form transitions enhance the user experience.
+Performance Optimization
+Efficient Handling
+Optimized for performance with memoization and virtualized rendering for large workflows.
+Bonus Features
+Real-Time Collaboration
+Optional feature to allow multiple users to edit the same workflow simultaneously using WebSockets.
+Conditional Logic for Edges
+Optional feature to implement conditional logic for edges, allowing only certain types of nodes to be connected.
+Unit Tests
+Optional feature to write unit tests for critical components using Jest and React Testing Library.
+Usage
+Workflow Canvas
+Adding Nodes
+Click on the "Add Task", "Add Condition", or "Add Notification" buttons to add nodes to the canvas.
+Nodes are randomly positioned on the canvas.
+Connecting Nodes
+Click and drag from the source node to the target node to create an edge.
+Deleting Nodes and Edges
+Click on a node or edge and use the delete button in the toolbar to remove it.
+Node Configuration
+Editing Nodes
+Click on a node to open the configuration panel on the right side.
+Fill in the form fields to update the node properties.
+Click "Save" to apply changes or "Cancel" to discard them.
+Workflow Data Table
+Viewing and Editing Nodes
+Click the "View Table" button in the toolbar to open the workflow data table.
+Edit node properties directly from the table.
+Click "Save" to apply changes or "Delete" to remove a node.
+Undo/Redo
+Undo and Redo Actions
+Use the "Undo" and "Redo" buttons in the toolbar to revert or reapply actions.
+Export/Import
+Export Workflow
+Click the "Export" button in the toolbar to download the workflow as a JSON file.
+Import Workflow
+Click the "Import" button in the toolbar and select a JSON file to import a workflow.
+Design Decisions and Trade-offs
+React Flow
+Chosen for its robustness and ease of use for creating interactive graphs.
+Trade-off: It may not be as lightweight as some other libraries.
+React Hook Form
+Used for efficient form handling and validation.
+Trade-off: Adds an additional dependency.
+React Table
+Used for displaying and editing workflow data.
+Trade-off: Requires careful handling of state updates to maintain performance.
+Tailwind CSS
+Chosen for its utility-first approach to styling.
+Trade-off: May result in larger CSS files compared to other styling solutions.
+Assumptions
+Node Types
+Only three types of nodes ("Task", "Condition", "Notification") are supported.
+Additional node types can be added by extending the nodeTypes array and creating corresponding components.
+Form Validation
+Basic validation rules are implemented. More complex validation can be added as needed.
+Performance
+The application is optimized for handling large workflows, but performance may degrade with extremely large datasets.
+Conclusion
+This application provides a comprehensive solution for workflow automation, combining powerful libraries and best practices in React development. It offers a user-friendly interface, robust functionality, and opportunities for further enhancement.
