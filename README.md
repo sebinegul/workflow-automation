@@ -2,6 +2,10 @@
 
 This is a React-based workflow automation builder that allows users to create, visualize, and manage workflows. The application features an interactive canvas for dragging and dropping nodes, configuring node properties, and visualizing workflows in real-time. It also includes advanced features like undo/redo functionality, workflow export/import, and a responsive design.
 
+## Demo
+
+[Workflow Automation Demo](https://workflow-automation-pi.vercel.app)
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
@@ -18,7 +22,7 @@ To run the project locally, follow these steps:
 
 ### Clone the Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/sebinegul/workflow-automation
 ```
 
 ### Install Dependencies
@@ -29,7 +33,7 @@ npm install
 
 ### Run the Application
 ```bash
-npm start
+npm run start
 ```
 
 This will start the development server and open the application in your default web browser.
@@ -170,3 +174,6 @@ This application provides a comprehensive solution for workflow automation, comb
 
 ## Contact
 For any questions or issues, please contact `your-email@example.com`.
+
+
+
