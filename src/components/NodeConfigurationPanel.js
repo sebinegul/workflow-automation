@@ -1,3 +1,4 @@
+// src/components/NodeConfigurationPanel.js
 import React from "react";
 import useNodeForm from "../hooks/useNodeForm";
 import TaskForm from "./forms/TaskForm";
@@ -36,7 +37,7 @@ const NodeConfigurationPanel = ({
 
   return (
     selectedNode && (
-      <div className="fixed top-0 right-0 w-1/3 h-full bg-white shadow-lg p-4 z-20 overflow-y-auto md:w-1/4">
+      <div className="fixed top-0 right-0 w-full md:w-1/3 lg:w-1/4 h-full bg-white shadow-lg p-4 z-20 overflow-y-auto">
         <h2 className="text-2xl font-bold mb-4">
           {selectedNode.data.label} Configuration
         </h2>
