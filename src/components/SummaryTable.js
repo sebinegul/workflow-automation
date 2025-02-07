@@ -1,5 +1,3 @@
-// src/components/SummaryTable.js
-import React from "react";
 import { RiCloseCircleLine } from "react-icons/ri";
 import NodeSummaryTable from "./NodeSummaryTable";
 

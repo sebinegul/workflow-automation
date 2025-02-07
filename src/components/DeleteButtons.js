@@ -1,4 +1,3 @@
-// src/components/DeleteButtons.js
 import React, { useState } from "react";
 import { RiDeleteBin4Line } from "react-icons/ri";
 

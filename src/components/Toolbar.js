@@ -1,5 +1,3 @@
-// src/components/Toolbar.js
-import React from "react";
 import { RiEyeLine } from "react-icons/ri";
 
 const Toolbar = ({

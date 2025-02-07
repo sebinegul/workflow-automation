@@ -1,4 +1,3 @@
-// src/components/NodeConfigurationPanel.js
 import React from "react";
 import useNodeForm from "../hooks/useNodeForm";
 import TaskForm from "./forms/TaskForm";

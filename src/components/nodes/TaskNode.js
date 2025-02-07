@@ -1,5 +1,3 @@
-// src/components/nodes/TaskNode.js
-import React from "react";
 import { Handle } from "reactflow";
 
 const TaskNode = ({ data }) => {

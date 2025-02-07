@@ -1,6 +1,3 @@
-// src/components/NodeButtons.js
-import React from "react";
-
 const NodeButtons = ({ addNode }) => {
   return (
     <div className="z-10">

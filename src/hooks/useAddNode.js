@@ -1,4 +1,3 @@
-// src/hooks/useAddNode.js
 import { useState } from "react";
 
 export const useAddNode = () => {

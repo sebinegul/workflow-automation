@@ -1,6 +1,3 @@
-// src/components/forms/ConditionForm.js
-import React from "react";
-
 const ConditionForm = ({ formData, handleInputChange }) => {
   return (
     <>
