@@ -1,3 +1,4 @@
+// src/App.js
 import React, { useCallback, useMemo, useState } from "react";
 import ReactFlow, {
   applyEdgeChanges,
@@ -115,7 +116,7 @@ const App = () => {
         <Controls />
         <Background />
       </ReactFlow>
-      <div className="flex items-center justify-between absolute top-4 z-10 gap-40 mx-8 md:gap-20 md:mx-4">
+      <div className="flex items-center w-full justify-between absolute top-4 z-10 mx-8 md:gap-20 md:mx-4">
         <NodeButtons
           addNode={(type) =>
             addNode(
@@ -150,6 +151,10 @@ const App = () => {
             handleClearAll={handleClearAll}
             toggleSummaryTable={() => setIsSummaryTableOpen((prev) => !prev)}
             isSummaryTableOpen={isSummaryTableOpen}
+            nodes={nodes}
+            edges={edges}
+            setNodes={setNodes}
+            setEdges={setEdges}
           />
         </div>
       </div>
